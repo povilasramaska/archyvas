@@ -1,0 +1,58 @@
+body{
+  background-size: 100% 1.5em;
+  background-image: -webkit-linear-gradient(#eee .05em, transparent 1px);
+  background-image: -moz-linear-gradient(#eee .05em, transparent 1px);
+  background-image: linear-gradient(#eee .05em, transparent 1px);
+}
+@font-face {
+  font-family: "SpecialElite";
+  src: url("../fonts/SpecialElite.woff");
+}
+@font-face {
+  font-family: "Cardo";
+  src: url("../fonts/cardo-regular.woff");
+}
+.konteineris {
+  margin:auto;
+  min-width: 400px;
+  width: 50%;
+}
+.pavadinimas{
+  font-size: 4em;
+  font-family: "SpecialElite";
+  text-align: left;
+  text-transform: uppercase;
+    }
+.citata{
+  display: block;
+  margin-left: 0;
+  font-family: "Cardo"
+}
+.autorius {
+  display: block;
+  text-align: right;
+  font-variant: small-caps;
+}
+h2 {
+  font-family: "SpecialElite";
+  text-transform: uppercase;
+  font-size: 2.5em;
+  text-align: left;
+  line-height: 1.2;
+}
+h3{
+  font-family: "SpecialElite";
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1;
+}
+.text{
+  font-family: "Cardo";
+  text-align: justify;
+}
+.text::first-letter{
+font-family: "SpecialElite";
+text-transform: uppercase;
+font-size: 2.7em;
+padding: 0px 5px 0px 5px;
+}

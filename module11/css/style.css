@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+background-image: url("../img/fond.png");
+}
+.imagelogo{
+    width: 150px;
+}
+.fa{
+display: block;
+}
+nav ul li{
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+nav{
+margin: 0 auto;
+vertical-align: middle;
+}
+.logo{
+    display: inline;
+}
+h1{
+    display: inline;
+}

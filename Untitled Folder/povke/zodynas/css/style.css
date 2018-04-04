@@ -1,0 +1,11 @@
+h1 {
+    color:red;
+}
+.custom{
+    height: 200px;
+    width: 100%;
+    background-image: url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+}

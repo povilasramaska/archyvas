@@ -1,0 +1,113 @@
+1. SELECT COUNT(`productCode`) as `Kiekis`, SUM(`quantityInStock`)as `Turimas_kiekis`
+ FROM `products`
+
+2.SELECT COUNT(`officeCode`) as `Kiekis`
+ FROM `offices`
+
+3.SELECT `orderNumber` as `uzsakymo nr`, `quantityOrdered`*`priceEach` as `suma`
+ FROM `orderdetails`
+
+4.SELECT `orderNumber` as `uzsakymo nr`, `quantityOrdered`*`priceEach` as `suma`
+FROM `orderdetails`
+ORDER BY `suma`
+
+5.SELECT `orderNumber` as `uzsakymo nr`, `quantityOrdered`*`priceEach` as `suma`
+FROM `orderdetails`
+WHERE `quantityOrdered`*`priceEach`>1000
+ORDER BY `suma`
+
+6.SELECT `orderNumber` as `uzsakymo nr`, `quantityOrdered`*`priceEach` as `suma`
+FROM `orderdetails`
+ WHERE `quantityOrdered`>50 ORDER BY `suma`
+
+7.SELECT `customerName` as `klientas`, `creditLimit` as `kedito limitas`
+FROM `customers`
+ WHERE `creditLImit`=0
+ ORDER BY `customerName`
+
+8.SELECT `customerName` as `klientas`, `creditLimit` as `kedito limitas`
+FROM `customers`
+ WHERE `creditLimit` BETWEEN 1 AND 35000
+ ORDER BY `customerName`
+
+9.SELECT `productCode` as `produkto kodas`, `productScale`
+FROM `products`
+WHERE `productScale`='1:10'
+
+10.ELECT `productCode` as `produkto kodas`, `productScale`
+FROM `products`
+WHERE `productScale`IN ('1:10','1:18')
+
+11.SELECT `productCode` as `produkto kodas`, `productScale`
+FROM `products`
+ WHERE NOT `productScale`='1:10'
+
+12.SELECT COUNT(`orderNumber`) as 'uzsakymu kiekis'
+FROM `orders`
+WHERE NOT `status`='Shipped' AND NOT `orderNumber` BETWEEN 10200 AND 10400
+ORDER BY `status`
+
+13.SELECT `orderNumber` as `uzsakymo numeris`, SUM(`quantityOrdered`*`priceEach`) as `suma`
+ FROM `orderdetails`
+  GROUP BY `orderNumber`
+
+14.SELECT `orderNumber` as `uzsakymo numeris`, SUM(`quantityOrdered`*`priceEach`) as `suma`, COUNT(*) as `eiluciu skaicius uzsakyme`
+FROM `orderdetails`
+GROUP BY `orderNumber`
+ORDER BY SUM(`quantityOrdered`*`priceEach`)
+
+15.SELECT `orderNumber`, DATEDIFF(`shippedDate`,`orderDate`) as `DIFF`, `shippedDate`, `orderDate`, `status`
+FROM `orders`
+WHERE DATEDIFF(`shippedDate`,`orderDate`)>7 OR `status`='Cancelled' AND `orderNumber`>10250
+
+16.SELECT `productVendor`
+FROM `products`
+WHERE `productVendor` LIKE '%Classic%'
+
+17.SELECT MIN(`priceEach`) as `MIN`, MAX(`priceEach`) as `MAX` FROM `orderdetails`
+
+18.SELECT `employeeNumber`, `firstName`, `lastName`, `city` FROM `employees` INNER JOIN `offices` ON `offices`.`officeCode`=`employees`.`officeCode`
+
+19.SELECT `checkNumber`,`customers`.`contactFirstName`,`customers`.`contactLastName`, `customers`.`country`
+FROM `payments` INNER JOIN `customers` ON `payments`.`customerNumber`=`customers`.`customerNumber`
+WHERE `contactFirstName` LIKE 'J%' AND NOT `country`='Norway'
+
+20.SELECT `checkNumber`,`customers`.`contactFirstName`,`customers`.`contactLastName`, `customers`.`country`, `employees`.`firstName`,`employees`.`lastName`
+FROM `payments` INNER JOIN `customers` ON `payments`.`customerNumber`=`customers`.`customerNumber`
+INNER JOIN `employees`ON `employees`.`employeeNumber`=`customers`.`salesRepEmployeeNumber`
+WHERE `contactFirstName` LIKE 'J%' AND `country` NOT LIKE 'Norway'
+
+21.SELECT `checkNumber`,`customers`.`contactFirstName`,`customers`.`contactLastName`, `customers`.`country`, `employees`.`firstName`,`employees`.`lastName`
+FROM `payments`
+INNER JOIN `customers` ON `payments`.`customerNumber`=`customers`.`customerNumber`
+INNER JOIN `employees`ON `employees`.`employeeNumber`=`customers`.`salesRepEmployeeNumber`
+WHERE `contactFirstName` LIKE 'J%' AND `country` NOT LIKE 'Norway'
+LIMIT 10 OFFSET 10
+
+22.SELECT `orders`.`orderNumber`, `priceEach`,`orders`.`orderDate`,`products`.`productName`,`productlines`.`textDescription`, `customers`.`country`, `orderdetails`.`quantityOrdered` as `uzsakymo kiekis`,`employees`.`firstName`,`employees`.`lastName`
+FROM `orderdetails`
+INNER JOIN `orders` ON `orderdetails`.`orderNumber`=`orders`.`orderNumber`
+INNER JOIN `products` ON `orderdetails`.`productCode`=`products`.`productCode`
+INNER JOIN `productlines` ON `products`.`productLine`=`productlines`.`productLine`
+INNER JOIN `customers` ON `customers`.`customerNumber`=`orders`.`customerNumber`
+INNER JOIN `employees` ON `employees`.`employeeNumber`=`customers`.`salesRepEmployeeNumber`
+WHERE `customers`.`country`='USA' AND `orderdetails`.`quantityOrdered`>50
+ORDER BY `orders`.`orderDate`
+
+23.SELECT `customers`.`customerNumber`,`customers`.`customerName`,`customers`.`country`, SUM(`amount`) as `suma`
+FROM `customers`
+INNER JOIN `payments` ON `payments`.`customerNumber`=`customers`.`customerNumber`
+WHERE `country` IN ('USA','Germany','France')
+GROUP BY `customers`.`customerNumber`
+HAVING `suma`>50000
+ORDER BY `country`, `suma` DESC
+
+24.SELECT `customers`.`customerName`,`orders`.`orderDate`,`orders`.`orderNumber`, SUM(`amount`)
+FROM `customers`
+INNER JOIN `orders` ON `customers`.`customerNumber`=`orders`.`customerNumber`
+INNER JOIN `payments` ON `payments`.`customerNumber`=`customers`.`customerNumber`
+GROUP BY `orders`.`orderNumber`, `customers`.`customerNumber`
+
+25.SELECT `customerNumber`, `customerName`
+FROM `customers`
+WHERE `salesRepEmployeeNumber` IN (SELECT `employeeNumber` FROM `employees` WHERE `officeCode`='1')

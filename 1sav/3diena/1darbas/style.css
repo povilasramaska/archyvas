@@ -1,0 +1,33 @@
+body{
+  background-color: #F5ECCE;
+}
+header{
+  width: 970px;
+  height: 274px;
+  margin: auto;
+  background-color: #DBA901;
+}
+.foto {float: right;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 0px 0px 0px 0px;
+}
+div{ width: 970px;
+  margin: auto;
+  background-color: #F5DEB3;
+}
+h1 {font-size: 60px;
+  padding: 20px;
+  color: #3B240B;
+}
+  h2 {
+    padding: 20px;
+    color: #3B240B;
+}
+h3{
+  padding-left: 40px;
+}
+footer{
+  width: 970px;
+  margin: auto;
+  background-color: #DBA901;

@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+#valandos,#minutes,#sekundes{
+    width: 100px;
+    height: 40px;
+    margin:25px;
+    padding: 5px;
+    border:1px solid red;
+    display: inline-block;
+}

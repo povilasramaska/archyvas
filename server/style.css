@@ -1,0 +1,15 @@
+.staciakampis{
+    width: 60px;
+    height: 60px;
+    border:5px solid green;
+    background-color: blue;
+    margin:10px;
+}
+.raud{
+    background-color: red;
+}
+.storas{
+    width: 100px;
+    height: 100px;
+    margin:60px;
+}

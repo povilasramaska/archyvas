@@ -1,0 +1,20 @@
+body{
+  background-color: #F5ECCE;
+  border-style: outset;
+}
+header, footer{
+  background-color: #DBA901;
+}
+#foto {float: right;
+  margin-right: 40px;
+  margin-left: 20px;
+}
+div{ padding: 30px;
+}
+h1,h2 {
+  padding: 20px;
+  color: #3B240B;
+}
+h3{
+  padding-left: 40px;
+}

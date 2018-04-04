@@ -1,0 +1,24 @@
+/*1.GLOBAL STYLES*/
+*{
+  box-sizing: border-box;
+}
+header.navigation{
+  text-align: center;
+}
+body{
+background-color: #f2f1f4;
+ font-size: 16px;\
+ font-family: "Open Sans";
+}
+a{
+  text-decoration: none;
+}
+h1, h2{
+  font-size: 1.4em 0;
+  color:#fff;
+  background-color: green;
+}
+img{
+  max-width: 100%;
+}
+/*2.CUSTOM STYLES*/

@@ -1,0 +1,35 @@
+ul.meniu1 {
+  list-style: none;
+  list-style-position: inside;
+  padding: 0;
+}
+#mn{
+  display: inline;
+  margin-right: 10px;
+}
+#arialas {
+  font-style: normal;
+  font-family: Arial;
+}
+#comicsans{
+  font-style: italic;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+p.red1 {
+  color:red;
+}
+p.blue1 {
+  color:blue;
+}
+p.green1 {
+  background-color:green;
+}
+p.red2 {
+  background-color:red;
+}
+p.blue2 {
+  background-color:blue;
+}
+p.green2 {
+background-color:green;
+}

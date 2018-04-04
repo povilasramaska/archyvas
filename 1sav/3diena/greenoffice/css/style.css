@@ -1,0 +1,105 @@
+*{
+  box-sizing: border-box;
+  }
+  body{
+  background-image: url("../img/fond.png");
+}
+.konteineris{
+  width: 750px;
+  margin: 0 auto;
+
+}
+header {
+  width: 750px;
+  height: 130px;
+  background-color:#b7ca22;
+}
+header::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+img.logo{
+float: left;
+}
+ul.meniu{
+    float: right;
+    list-style: none;
+    list-style-position: inside;
+    margin-top: 60px;
+    margin-right: 20px;
+  }
+.m1{
+  text-transform: uppercase;
+  display: inline;
+  padding: 10px;
+}
+.m1 a{
+  text-decoration: none;
+}
+main{
+  background-color: white;
+  width: 750px;
+}
+main::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.kairepuse{
+  width: 34%;
+float: left;
+padding-left: 40px;
+padding-right: 20px;
+border-right: 1px solid grey;
+}
+
+.desinepuse{
+  width: 65%;
+  float: right;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+.poraste{
+  text-align: center;
+}
+.foto1{
+width: 70%;
+padding: 10px;
+}
+.foto2{
+  float: left;
+  width: 40%;
+  padding: 10px;
+}
+h1{
+  font-size: 25px;
+  padding: 10px;
+}
+h2{
+  font-size: 16px;
+  padding: 10px;
+}
+p{
+  font-size: 11px;
+  padding: 3px;
+}
+
+div::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+color: white;
+background-color:#b8cb21;
+width: 70px;
+height: 30px;
+float: right;
+border: none;
+font-size: 11px;
+margin-bottom: 10px;
+}
+.sarasas li{
+  font-size: 11px;
+}
